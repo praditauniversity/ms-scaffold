@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"ms-scaffold/api/injector"
 	"ms-scaffold/api/middleware"
+	"ms-scaffold/config/injector"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
