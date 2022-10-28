@@ -97,12 +97,12 @@ func (controller *scaffoldController) Create(context *gin.Context) {
 	}
 
 	webResponse := web.WebResponse{
-		Code:   http.StatusOK,
+		Code:   http.StatusCreated,
 		Status: "Success",
 		Errors: "",
 		Data:   scaffold,
 	}
-	context.JSON(http.StatusOK, webResponse)
+	context.JSON(http.StatusCreated, webResponse)
 	// token := context.GetHeader("Authorization")
 	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
 	// controller.logger.Infof("%d already insert a scaffold with id %d", userId, scaffold.ID)
