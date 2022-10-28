@@ -24,11 +24,11 @@ func NewScaffoldService(scaffoldRepo repository.ScaffoldRepository) ScaffoldServ
 	return &scaffoldService{scaffoldRepository: scaffoldRepo}
 }
 
-func (as *scaffoldService) All() []domain.Scaffold {
-	return as.scaffoldRepository.All()
+func (service *scaffoldService) All() []domain.Scaffold {
+	return service.scaffoldRepository.All()
 }
 
-func (as *scaffoldService) Create(request web.ScaffoldRequest) (domain.Scaffold, error) {
+func (service *scaffoldService) Create(request web.ScaffoldRequest) (domain.Scaffold, error) {
 	scaffold := domain.Scaffold{}
 
 	err := smapping.FillStruct(&scaffold, smapping.MapFields(&request))
@@ -37,12 +37,12 @@ func (as *scaffoldService) Create(request web.ScaffoldRequest) (domain.Scaffold,
 		return scaffold, err
 	}
 
-	return as.scaffoldRepository.Create(scaffold), nil
+	return service.scaffoldRepository.Create(scaffold), nil
 }
 
-func (as *scaffoldService) Update(request web.ScaffoldUpdateRequest) (domain.Scaffold, error) {
+func (service *scaffoldService) Update(request web.ScaffoldUpdateRequest) (domain.Scaffold, error) {
 	scaffold := domain.Scaffold{}
-	res, err := as.scaffoldRepository.FindById(request.ID)
+	res, err := service.scaffoldRepository.FindById(request.ID)
 	if err != nil {
 		return scaffold, err
 	}
@@ -52,22 +52,22 @@ func (as *scaffoldService) Update(request web.ScaffoldUpdateRequest) (domain.Sca
 	}
 	scaffold.User_id = res.User_id
 
-	return as.scaffoldRepository.Update(scaffold), nil
+	return service.scaffoldRepository.Update(scaffold), nil
 }
 
-func (as *scaffoldService) FindById(id uint) (domain.Scaffold, error) {
-	scaffold, err := as.scaffoldRepository.FindById(id)
+func (service *scaffoldService) FindById(id uint) (domain.Scaffold, error) {
+	scaffold, err := service.scaffoldRepository.FindById(id)
 	if err != nil {
 		return scaffold, err
 	}
 	return scaffold, nil
 }
 
-func (as *scaffoldService) Delete(id uint) error {
-	scaffold, err := as.scaffoldRepository.FindById(id)
+func (service *scaffoldService) Delete(id uint) error {
+	scaffold, err := service.scaffoldRepository.FindById(id)
 	if err != nil {
 		return err
 	}
-	as.scaffoldRepository.Delete(scaffold)
+	service.scaffoldRepository.Delete(scaffold)
 	return nil
 }

@@ -28,8 +28,8 @@ func NewScaffoldController(scaffoldService service.ScaffoldService) ScaffoldCont
 	}
 }
 
-func (ac *scaffoldController) All(context *gin.Context) {
-	scaffold := ac.scaffoldService.All()
+func (controller *scaffoldController) All(context *gin.Context) {
+	scaffold := controller.scaffoldService.All()
 	webResponse := web.WebResponse{
 		Code:   http.StatusOK,
 		Status: "Success",
@@ -39,14 +39,14 @@ func (ac *scaffoldController) All(context *gin.Context) {
 	context.JSON(http.StatusOK, webResponse)
 }
 
-func (ac *scaffoldController) FindById(context *gin.Context) {
+func (controller *scaffoldController) FindById(context *gin.Context) {
 	idString := context.Param("id")
 	id, err := strconv.ParseUint(idString, 10, 64)
 	ok := helper.NotFoundError(context, err)
 	if ok {
 		return
 	}
-	scaffold, err := ac.scaffoldService.FindById(uint(id))
+	scaffold, err := controller.scaffoldService.FindById(uint(id))
 	ok = helper.NotFoundError(context, err)
 	if ok {
 		return
@@ -60,14 +60,14 @@ func (ac *scaffoldController) FindById(context *gin.Context) {
 	context.JSON(http.StatusOK, webResponse)
 }
 
-func (ac *scaffoldController) Insert(context *gin.Context) {
+func (controller *scaffoldController) Insert(context *gin.Context) {
 	var request web.ScaffoldRequest
 	err := context.BindJSON(&request)
 	ok := helper.InternalServerError(context, err)
 	if ok {
 		return
 	}
-	scaffold, err := ac.scaffoldService.Create(request)
+	scaffold, err := controller.scaffoldService.Create(request)
 
 	ok = helper.InternalServerError(context, err)
 	if ok {
@@ -83,7 +83,7 @@ func (ac *scaffoldController) Insert(context *gin.Context) {
 	context.JSON(http.StatusOK, webResponse)
 }
 
-func (ac *scaffoldController) Update(context *gin.Context) {
+func (controller *scaffoldController) Update(context *gin.Context) {
 	var request web.ScaffoldUpdateRequest
 	idString := context.Param("id")
 	id, err := strconv.ParseUint(idString, 10, 64)
@@ -97,7 +97,7 @@ func (ac *scaffoldController) Update(context *gin.Context) {
 	if ok {
 		return
 	}
-	scaffold, err := ac.scaffoldService.Update(request)
+	scaffold, err := controller.scaffoldService.Update(request)
 	ok = helper.InternalServerError(context, err)
 	if ok {
 		return
@@ -111,14 +111,14 @@ func (ac *scaffoldController) Update(context *gin.Context) {
 	context.JSON(http.StatusOK, webResponse)
 }
 
-func (ac *scaffoldController) Delete(context *gin.Context) {
+func (controller *scaffoldController) Delete(context *gin.Context) {
 	idString := context.Param("id")
 	id, err := strconv.ParseUint(idString, 10, 64)
 	ok := helper.NotFoundError(context, err)
 	if ok {
 		return
 	}
-	err = ac.scaffoldService.Delete(uint(id))
+	err = controller.scaffoldService.Delete(uint(id))
 	ok = helper.NotFoundError(context, err)
 	if ok {
 		return
