@@ -4,9 +4,9 @@
 package injector
 
 import (
-	"ms-scaffold/controller"
-	"ms-scaffold/repository"
-	"ms-scaffold/service"
+	"ms-scaffold/api/controller"
+	"ms-scaffold/api/repository"
+	"ms-scaffold/api/service"
 
 	"github.com/google/wire"
 	"gorm.io/gorm"
