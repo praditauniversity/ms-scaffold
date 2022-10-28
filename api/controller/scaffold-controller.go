@@ -27,11 +27,11 @@ type scaffoldController struct {
 	logger          helper.Log
 }
 
-func NewScaffoldController(scaffoldService service.ScaffoldService, jwtService service.JWTService, logger helper.Log) ScaffoldController {
+func NewScaffoldController(scaffoldService service.ScaffoldService /*, jwtService service.JWTService*/, logger helper.Log) ScaffoldController {
 	return &scaffoldController{
 		scaffoldService: scaffoldService,
-		jwtService:      jwtService,
-		logger:          logger,
+		// jwtService:      jwtService,
+		logger: logger,
 	}
 }
 
@@ -45,9 +45,9 @@ func (controller *scaffoldController) All(context *gin.Context) {
 		Data:   scaffold,
 	}
 	context.JSON(http.StatusOK, webResponse)
-	token := context.GetHeader("Authorization")
-	userId, _ := controller.jwtService.GetUserData(token, "user_id")
-	controller.logger.Infof("%s already get all scaffolds", userId)
+	// token := context.GetHeader("Authorization")
+	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
+	// controller.logger.Infof("%s already get all scaffolds", userId)
 }
 
 func (controller *scaffoldController) FindById(context *gin.Context) {
@@ -72,9 +72,9 @@ func (controller *scaffoldController) FindById(context *gin.Context) {
 		Data:   scaffold,
 	}
 	context.JSON(http.StatusOK, webResponse)
-	token := context.GetHeader("Authorization")
-	userId, _ := controller.jwtService.GetUserData(token, "user_id")
-	controller.logger.Infof("%s already find a user data with id %d", userId, scaffold.ID)
+	// token := context.GetHeader("Authorization")
+	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
+	// controller.logger.Infof("%s already find a user data with id %d", userId, scaffold.ID)
 }
 
 func (controller *scaffoldController) Create(context *gin.Context) {
@@ -103,9 +103,9 @@ func (controller *scaffoldController) Create(context *gin.Context) {
 		Data:   scaffold,
 	}
 	context.JSON(http.StatusOK, webResponse)
-	token := context.GetHeader("Authorization")
-	userId, _ := controller.jwtService.GetUserData(token, "user_id")
-	controller.logger.Infof("%d already insert a scaffold with id %d", userId, scaffold.ID)
+	// token := context.GetHeader("Authorization")
+	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
+	// controller.logger.Infof("%d already insert a scaffold with id %d", userId, scaffold.ID)
 }
 
 func (controller *scaffoldController) Update(context *gin.Context) {
@@ -140,9 +140,9 @@ func (controller *scaffoldController) Update(context *gin.Context) {
 		Data:   scaffold,
 	}
 	context.JSON(http.StatusOK, webResponse)
-	token := context.GetHeader("Authorization")
-	userId, _ := controller.jwtService.GetUserData(token, "user_id")
-	controller.logger.Infof("%s already updated a scaffold with id %d", userId, scaffold.ID)
+	// token := context.GetHeader("Authorization")
+	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
+	// controller.logger.Infof("%s already updated a scaffold with id %d", userId, scaffold.ID)
 }
 
 func (controller *scaffoldController) Delete(context *gin.Context) {
@@ -168,7 +168,7 @@ func (controller *scaffoldController) Delete(context *gin.Context) {
 		Data:   "Scaffold has been removed",
 	}
 	context.JSON(http.StatusOK, webResponse)
-	token := context.GetHeader("Authorization")
-	userId, _ := controller.jwtService.GetUserData(token, "user_id")
-	controller.logger.Infof("%s already deleted a scaffold with id %d", userId, id)
+	// token := context.GetHeader("Authorization")
+	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
+	// controller.logger.Infof("%s already deleted a scaffold with id %d", userId, id)
 }

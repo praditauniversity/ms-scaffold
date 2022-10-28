@@ -11,9 +11,9 @@ import (
 
 func NewScaffoldRoutes(db *gorm.DB, route *gin.Engine) {
 	scaffoldController := injector.InitScaffold(db)
-	authorizeJWTMiddleware := injector.InitJWTMiddleware()
+	// authorizeJWTMiddleware := injector.InitJWTMiddleware()
 	scaffoldRoute := route.Group("/api/v1/scaffold")
-	scaffoldRoute.Use(authorizeJWTMiddleware.AuthorizeJWT())
+	// scaffoldRoute.Use(authorizeJWTMiddleware.AuthorizeJWT())
 	scaffoldRoute.Use(middleware.ErrorHandler())
 	scaffoldRoute.Use(cors.Default())
 	scaffoldRoute.GET("/", scaffoldController.All)

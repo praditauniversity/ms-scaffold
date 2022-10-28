@@ -6,7 +6,6 @@ package injector
 import (
 	"ms-scaffold/api/controller"
 	"ms-scaffold/api/helper"
-	"ms-scaffold/api/middleware"
 	"ms-scaffold/api/repository"
 	"ms-scaffold/api/service"
 
@@ -15,17 +14,17 @@ import (
 	"gorm.io/gorm"
 )
 
-var jwtMiddlewareSet = wire.NewSet(
-	service.NewJWTService,
-	middleware.NewAuthorizeJWTMiddleware,
-)
+// var jwtMiddlewareSet = wire.NewSet(
+// 	service.NewJWTService,
+// 	middleware.NewAuthorizeJWTMiddleware,
+// )
 
 var scaffoldSet = wire.NewSet(
 	logrus.New,
 	helper.NewLog,
 	controller.NewScaffoldController,
 	repository.NewScaffoldRepository,
-	service.NewJWTService,
+	// service.NewJWTService,
 	service.NewScaffoldService,
 )
 
@@ -36,9 +35,9 @@ func InitScaffold(db *gorm.DB) controller.ScaffoldController {
 	return nil
 }
 
-func InitJWTMiddleware() middleware.AuthorizeJWTMiddleware {
-	wire.Build(
-		jwtMiddlewareSet,
-	)
-	return nil
-}
+// func InitJWTMiddleware() middleware.AuthorizeJWTMiddleware {
+// 	wire.Build(
+// 		jwtMiddlewareSet,
+// 	)
+// 	return nil
+// }
