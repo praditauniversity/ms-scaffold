@@ -13,9 +13,9 @@ import (
 )
 
 var scaffoldSet = wire.NewSet(
+	controller.NewScaffoldController,
 	repository.NewScaffoldRepository,
 	service.NewScaffoldService,
-	controller.NewScaffoldController,
 )
 
 func InitScaffold(db *gorm.DB) controller.ScaffoldController {
