@@ -1,1 +1,9 @@
 bin/*
+
+# Ignore exe and log files
+scaffold
+scaffold.exe
+scaffold.log
+
+# Ignore files related to API keys
+.env
