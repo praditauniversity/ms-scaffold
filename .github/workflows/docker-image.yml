@@ -22,6 +22,17 @@ jobs:
 
     - name: Stop Container
       run: docker-compose -f "docker-compose.yml" down
+  
+  api_testing:
 
-#    - name: Compose docker
-#      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Api Testing
+      uses: matt-ball/newman-action@master
+      with:
+        collection: test/Scaffold_API.postman_collection.json
