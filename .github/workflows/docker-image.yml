@@ -7,9 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
@@ -19,12 +17,8 @@ jobs:
     - name: Start Container
       run: docker-compose -f "docker-compose.yml" up -d --build
 
-    - name: Check Netstat
-      run: netstat -lt && ip a
-
-    - name: Api Testing
+    - name: Run API Testing for Scaffold API
       run: newman run test/Scaffold_API.postman_collection.json
 
     - name: Stop Container
       run: docker-compose -f "docker-compose.yml" down
-  
