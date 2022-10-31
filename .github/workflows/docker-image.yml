@@ -20,6 +20,9 @@ jobs:
     - name: Start Container
       run: docker-compose -f "docker-compose.yml" up -d --build
 
+    - name: Check Netstat
+      run: netstat -lt 
+
     - name: Api Testing
       uses: matt-ball/newman-action@master
       with:
