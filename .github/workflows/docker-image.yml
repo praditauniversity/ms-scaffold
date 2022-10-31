@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - uses: isbang/compose-action@v1.4.0
+      with: 
+        compose-file: "./docker/docker-compose.yml"
+
+#    - name: Compose docker
+#      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
