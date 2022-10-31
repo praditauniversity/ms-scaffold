@@ -12,9 +12,6 @@ jobs:
 
     timeout-minutes: 10
     runs-on: ubuntu-latest
-    container: 
-      image: postman/newman
-
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -23,7 +20,7 @@ jobs:
       run: docker-compose -f "docker-compose.yml" up -d --build
 
     - name: Check Netstat
-      run: netstat -lt 
+      run: netstat -lt && ip a
 
     - name: Api Testing
       run: newman run test/Scaffold_API.postman_collection.json
