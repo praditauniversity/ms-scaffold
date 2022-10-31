@@ -38,10 +38,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://0.0.0.0:1001/api/v1/scaffold/",
+					"raw": "http://scaffold:1001/api/v1/scaffold/",
 					"protocol": "http",
 					"host": [
-						"0.0.0.0"
+						"scaffold"
 					],
 					"port": "1001",
 					"path": [
@@ -98,10 +98,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://0.0.0.0:1001/api/v1/scaffold/",
+					"raw": "http://scaffold:1001/api/v1/scaffold/",
 					"protocol": "http",
 					"host": [
-						"0.0.0.0"
+						"scaffold"
 					],
 					"port": "1001",
 					"path": [
@@ -135,10 +135,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://0.0.0.0:1001/api/v1/scaffold",
+							"raw": "http://scaffold:1001/api/v1/scaffold",
 							"protocol": "http",
 							"host": [
-								"0.0.0.0"
+								"scaffold"
 							],
 							"port": "1001",
 							"path": [
@@ -181,10 +181,10 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://0.0.0.0:1001/api/v1/scaffold/1",
+					"raw": "http://scaffold:1001/api/v1/scaffold/1",
 					"protocol": "http",
 					"host": [
-						"0.0.0.0"
+						"scaffold"
 					],
 					"port": "1001",
 					"path": [
