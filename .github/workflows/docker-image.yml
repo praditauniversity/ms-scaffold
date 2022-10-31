@@ -8,10 +8,12 @@ on:
 
 jobs:
 
-  docker:
+  build:
 
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    container: 
+      image: postman/newman
 
     steps:
     - name: Checkout
@@ -24,9 +26,7 @@ jobs:
       run: netstat -lt 
 
     - name: Api Testing
-      uses: matt-ball/newman-action@master
-      with:
-        collection: test/Scaffold_API.postman_collection.json
+      run: newman run test/Scaffold_API.postman_collection.json
 
     - name: Stop Container
       run: docker-compose -f "docker-compose.yml" down
