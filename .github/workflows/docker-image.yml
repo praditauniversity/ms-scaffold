@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: isbang/compose-action@v1.4.0
       with: 
-        compose-file: "./docker/docker-compose.yml"
+        compose-file: "../../docker-compose.yml"
 
 #    - name: Compose docker
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
