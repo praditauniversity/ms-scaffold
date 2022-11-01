@@ -2,6 +2,7 @@ package helper
 
 import (
 	"os"
+	"path/filepath"
 
 	"github.com/sirupsen/logrus"
 )
@@ -17,11 +18,18 @@ func NewLog(log *logrus.Logger) Log {
 }
 
 func (log Log) SetUp(output string) {
+	cwd, err := os.Getwd()
+	if err != nil {
+		log.Errorf("Failed to determine working directory: %s", err)
+	}
+
+	logFile := filepath.Join(cwd, "/test/logs/scaffold.log")
 	log.log.SetLevel(logrus.InfoLevel)
-	file, error := os.OpenFile(output, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	file, error := os.OpenFile(logFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if error != nil {
 		log.log.Fatal("Failed to log to file, using default stderr")
 	}
+
 	log.log.SetOutput(file)
 }
 
