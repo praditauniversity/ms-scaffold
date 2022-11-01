@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Start Container
-      run: docker-compose -f "docker-compose.yml" up -d --build
+      run: docker compose down && docker-compose -f "docker-compose.yml" up -d --build
 
     - name: Run API Testing for Scaffold API
       run: newman run test/Scaffold.postman_collection.json
