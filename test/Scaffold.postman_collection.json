@@ -1,0 +1,463 @@
+{
+	"info": {
+		"_postman_id": "9f073f2d-3cb3-4f01-a112-0b55787ec613",
+		"name": "Scaffold",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23957197"
+	},
+	"item": [
+		{
+			"name": "scaffold",
+			"item": [
+				{
+					"name": "101_Default",
+					"item": [
+						{
+							"name": "Post a Scaffold",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Pass: Create ID (OK).\", function () {",
+											"    pm.response.to.not.be.error;",
+											"    pm.response.to.not.have.jsonBody(\"\");",
+											"    pm.response.to.not.have.jsonBody(\"error\");",
+											"    pm.response.to.be.withBody;",
+											"    pm.response.to.be.json;",
+											"    pm.response.to.have.status(\"Created\");",
+											"    pm.response.to.have.status(201);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{scaffoldUrl}}",
+									"host": [
+										"{{scaffoldUrl}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Expected response to a valid request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{scaffoldUrl}}",
+											"host": [
+												"{{scaffoldUrl}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All Scaffold",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Pass: Get All (OK).\", function () {",
+											"    pm.response.to.not.be.error;",
+											"    pm.response.to.not.have.jsonBody(\"\");",
+											"    pm.response.to.not.have.jsonBody(\"error\");",
+											"    pm.response.to.be.withBody;",
+											"    pm.response.to.be.json;",
+											"    pm.response.to.have.status(\"OK\");",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{scaffoldUrl}}",
+									"host": [
+										"{{scaffoldUrl}}"
+									]
+								},
+								"description": "Info for all activity"
+							},
+							"response": [
+								{
+									"name": "Expected response to a valid request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{scaffoldUrl}}",
+											"host": [
+												"{{scaffoldUrl}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "102_By_ID",
+					"item": [
+						{
+							"name": "Get a scaffold",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Pass: Get By ID (OK).\", function () {",
+											"    pm.response.to.not.be.error;",
+											"    pm.response.to.not.have.jsonBody(\"\");",
+											"    pm.response.to.not.have.jsonBody(\"error\");",
+											"    pm.response.to.be.withBody;",
+											"    pm.response.to.be.json;",
+											"    pm.response.to.have.status(\"OK\");",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{scaffoldUrl}}/{{id}}",
+									"host": [
+										"{{scaffoldUrl}}"
+									],
+									"path": [
+										"{{id}}"
+									]
+								},
+								"description": "Info for an activity"
+							},
+							"response": [
+								{
+									"name": "Expected response to a valid request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{scaffoldUrl}}/{{id}}",
+											"host": [
+												"{{scaffoldUrl}}"
+											],
+											"path": [
+												"{{id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Scaffold by ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Pass: By ID (OK).\", function () {",
+											"    pm.response.to.not.be.error;",
+											"    pm.response.to.not.have.jsonBody(\"\");",
+											"    pm.response.to.not.have.jsonBody(\"error\");",
+											"    pm.response.to.be.withBody;",
+											"    pm.response.to.be.json;",
+											"    pm.response.to.have.status(\"OK\");",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Create\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"updated_by\": \"arci\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{scaffoldUrl}}/{{id}}",
+									"host": [
+										"{{scaffoldUrl}}"
+									],
+									"path": [
+										"{{id}}"
+									]
+								},
+								"description": "Update Activity specified by ID."
+							},
+							"response": [
+								{
+									"name": "Expected response to a valid request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{scaffoldUrl}}/{{id}}",
+											"host": [
+												"{{scaffoldUrl}}"
+											],
+											"path": [
+												"{{id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": 200,\n  \"status\": \"Success\",\n  \"errors\": \"\",\n  \"data\": \"Activity has been updated successfuly.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete scaffold",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Pass: Delete (OK).\", function () {",
+											"    pm.response.to.not.be.error;",
+											"    pm.response.to.not.have.jsonBody(\"\");",
+											"    pm.response.to.not.have.jsonBody(\"error\");",
+											"    pm.response.to.be.withBody;",
+											"    pm.response.to.be.json;",
+											"    pm.response.to.have.status(\"OK\");",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{scaffoldUrl}}/{{id}}",
+									"host": [
+										"{{scaffoldUrl}}"
+									],
+									"path": [
+										"{{id}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Expected response to a valid request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{scaffoldUrl}}/{{id}}",
+											"host": [
+												"{{scaffoldUrl}}"
+											],
+											"path": [
+												"{{id}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "scaffoldUrl",
+			"value": "http://localhost:1001/api/v1/scaffold",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
