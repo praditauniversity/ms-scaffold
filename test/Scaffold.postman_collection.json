@@ -354,7 +354,7 @@
 								}
 							],
 							"request": {
-								"method": "POST",
+								"method": "DELETE",
 								"header": [
 									{
 										"key": "Content-Type",
