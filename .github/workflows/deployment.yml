@@ -18,7 +18,7 @@ jobs:
       run: docker-compose -f "docker-compose.yml" up -d --build
 
     - name: Run API Testing for Scaffold API
-      run: newman run test/Scaffold_API.postman_collection.json
+      run: newman run test/Scaffold.postman_collection.json
 
     - name: Stop Container
       run: docker-compose -f "docker-compose.yml" down
