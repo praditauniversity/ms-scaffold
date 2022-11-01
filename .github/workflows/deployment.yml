@@ -14,8 +14,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    - name: Remove Existing Container
+      run: docker-compose -f "docker-compose.yml" down
+
     - name: Start Container
-      run: docker compose down && docker-compose -f "docker-compose.yml" up -d --build
+      run: docker-compose -f "docker-compose.yml" up -d --build
 
     - name: Run API Testing for Scaffold API
       run: newman run test/Scaffold.postman_collection.json

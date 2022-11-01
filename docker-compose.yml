@@ -47,4 +47,4 @@ services:
     depends_on:
       scaffold_db:
         condition: service_healthy
-    # network_mode: "host"
+    network_mode: "host"
