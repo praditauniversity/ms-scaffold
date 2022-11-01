@@ -35,7 +35,7 @@ services:
     container_name: scaffold_test
     healthcheck:
       test: curl -f https://localhost:1001/api/v1/scaffold/ || exit 1
-      interval: 5s
+      interval: 20s
       timeout: 1m
       retries: 5
       start_period: 30s
