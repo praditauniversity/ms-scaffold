@@ -21,6 +21,9 @@ jobs:
     - name: Start API Server
       run: docker compose -f "docker-compose.yml" up --build -d
 
+    - name: Check docker process
+      run: docker compose ps
+
     - name: Sleep
       run: sleep 10s
 
