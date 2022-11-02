@@ -1,5 +1,6 @@
 name: REST API Deployment and Test
 
+
 on:
   push:
     branches: [ "main" ]
@@ -23,7 +24,10 @@ jobs:
     - name: Sleep
       run: sleep 15s
 
-    - name: Newman
-      uses: matt-ball/newman-action@master
-      with:
-        collection: test/Scaffold.postman_collection.json
+    - name: Check if connection running
+      run: curl http://localhost:1001/api/v1/scaffold/
+
+    # - name: Newman
+    #   uses: matt-ball/newman-action@master
+    #   with:
+    #     collection: test/Scaffold.postman_collection.json
