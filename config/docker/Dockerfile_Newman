@@ -1,3 +1,3 @@
 FROM postman/newman
 ADD . /newman
-# ENTRYPOINT newman run /newman/test/Scaffold.postman_collection.json
+ENTRYPOINT sleep 20 && newman run /newman/test/Scaffold.postman_collection.json

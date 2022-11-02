@@ -1,4 +1,9 @@
 version: "3"
+
+networks:
+  backend:
+    driver: "host"
+
 services:
   scaffold:
     container_name: ${SERVICE_NAME}
@@ -35,16 +40,15 @@ services:
     container_name: scaffold_test
     healthcheck:
       test: curl -f https://localhost:1001/api/v1/scaffold/ || exit 1
-      interval: 20s
+      interval: 10s
       timeout: 1m
-      retries: 5
+      retries: 3
       start_period: 30s
     build:
       context: .
       dockerfile: ./config/docker/Dockerfile_Newman
     env_file: .env
     tty: true
-    command: sleep 20 && newman /newman/test/Scaffold.postman_collection.json
     depends_on:
       scaffold_db:
         condition: service_healthy
