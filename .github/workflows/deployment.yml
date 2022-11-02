@@ -31,13 +31,19 @@ jobs:
       run: netstat -tulpn
 
     - name: Check if connection running
-      run: curl -s -i http://localhost:1001/api/v1/scaffold/
-      # run: curl http://localhost:1001/api/v1/scaffold/
+      run: curl http://localhost:1001/api/v1/scaffold/
 
     # - name: API Testing
     #   run: docker compose -f "docker-compose.yml" up --build -d scaffold_test
 
-    - name: Newman
-      uses: matt-ball/newman-action@master
-      with:
-        collection: test/Scaffold.postman_collection.json
+    - name: Install Newman
+      run: npm install -g newman
+      
+    - name: Run integrated tests using Postaman Runner by Newman
+      run: newman run test/Scaffold.postman_collection.json --bail --verbose
+
+
+    # - name: Newman
+    #   uses: matt-ball/newman-action@master
+    #   with:
+    #     collection: test/Scaffold.postman_collection.json
