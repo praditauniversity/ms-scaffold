@@ -27,6 +27,8 @@ jobs:
     - name: Docker network check
       run: docker network ls
 
+    - name: Inspect docker network
+      run: docker inspect ms-scaffold_default
     # - name: Check if connection running
     #   run: curl http://localhost:1001/api/v1/scaffold/
 
