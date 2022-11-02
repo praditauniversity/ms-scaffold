@@ -34,7 +34,7 @@ jobs:
       with:
         collection: test/Scaffold.postman_collection.json
         delayRequest: 1000
-        envVar: '[{ "key": "scaffoldUrl", "value": "http://localhost:1001/api/v1/scaffold" }]'
+        envVar: '[{ "key": "scaffoldUrl", "value": "http://127.0.0.1:1001/api/v1/scaffold" }]'
 
     # - name: Newman
     #   uses: matt-ball/newman-action@master
