@@ -30,8 +30,8 @@ jobs:
     - name: Show netstat
       run: netstat -tulpn
 
-    - name: Check if connection running
-      run: curl http://localhost:1001/api/v1/scaffold/
+    # - name: Check if connection running
+    #   run: curl http://localhost:1001/api/v1/scaffold/
 
     # - name: API Testing
     #   run: docker compose -f "docker-compose.yml" up --build -d scaffold_test
