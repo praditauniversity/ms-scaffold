@@ -44,6 +44,7 @@ services:
       dockerfile: ./config/docker/Dockerfile_Newman
     env_file: .env
     tty: true
+    command: sleep 20 && newman /newman/test/Scaffold.postman_collection.json
     depends_on:
       scaffold_db:
         condition: service_healthy
