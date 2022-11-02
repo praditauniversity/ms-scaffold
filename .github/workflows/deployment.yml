@@ -42,6 +42,11 @@ jobs:
     - name: Run integrated tests using Postaman Runner by Newman
       run: newman run test/Scaffold.postman_collection.json --bail --verbose
 
+    - uses: matt-ball/newman-action@master
+      with:
+        collection: test/Scaffold.postman_collection.json
+        delayRequest: 1000
+        envVar: '[{ "key": "scaffoldUrl", "value": "http://localhost:3000" }]'
 
     # - name: Newman
     #   uses: matt-ball/newman-action@master
