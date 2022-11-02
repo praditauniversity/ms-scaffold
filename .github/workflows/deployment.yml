@@ -31,7 +31,8 @@ jobs:
       run: netstat -tulpn
 
     - name: Check if connection running
-      run: curl http://localhost:1001/api/v1/scaffold/
+      run: curl -s -i http://localhost:1001/api/v1/scaffold/ | head -1
+      # run: curl http://localhost:1001/api/v1/scaffold/
 
     # - name: Newman
     #   uses: matt-ball/newman-action@master
