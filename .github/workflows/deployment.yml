@@ -18,8 +18,11 @@ jobs:
     - name: Start Container
       run: make orphans
 
-    - name: Start Container
-      run: docker compose -f "docker-compose.yml" up --build -d
+    - name: Start Database
+      run: docker compose -f "docker-compose.yml" up --build -d scaffold_db
+
+    - name: Start API Server
+      run: docker compose -f "docker-compose.yml" up --build -d scaffold
 
     - name: Sleep
       run: sleep 15s
@@ -33,6 +36,9 @@ jobs:
     - name: Check if connection running
       run: curl -s -i http://localhost:1001/api/v1/scaffold/ | head -1
       # run: curl http://localhost:1001/api/v1/scaffold/
+
+    - name: API Testing
+      run: docker compose -f "docker-compose.yml" up --build -d scaffold_test
 
     # - name: Newman
     #   uses: matt-ball/newman-action@master
