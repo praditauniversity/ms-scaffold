@@ -23,5 +23,7 @@ jobs:
     - name: Sleep
       run: sleep 15s
 
-    - name: Run API Test
-      run: docker compose -f "docker-compose-test.yml" up --build --abort-on-container-exit
+    - name: Newman
+      uses: matt-ball/newman-action@master
+      with:
+        collection: test/Scaffold.postman_collection.json
