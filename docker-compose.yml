@@ -16,7 +16,7 @@ services:
       - .:/${SERVICE_NAME}
     ports:
       - ${SCAFFOLD_PORT}:8080
-    env_file: .env
+    env_file: env
     links:
       - "scaffold_db:db"
     depends_on:
@@ -32,24 +32,6 @@ services:
       start_period: 30s
     image: postgres
     restart: always
-    env_file: .env
+    env_file: env
     ports:
       - ${SCAFFOLD_DB_PORT}:5432
-
-  scaffold_test:
-    container_name: scaffold_test
-    healthcheck:
-      test: curl -f https://localhost:1001/api/v1/scaffold/ || exit 1
-      interval: 10s
-      timeout: 1m
-      retries: 3
-      start_period: 30s
-    build:
-      context: .
-      dockerfile: ./config/docker/Dockerfile_Newman
-    env_file: .env
-    tty: true
-    depends_on:
-      scaffold_db:
-        condition: service_healthy
-    network_mode: "host"
