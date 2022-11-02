@@ -22,7 +22,10 @@ jobs:
       run: docker compose -f "docker-compose.yml" up --build -d
 
     - name: Sleep
-      run: sleep 15s
+      run: sleep 10s
+
+    - name: Docker network check
+      run: docker network ps
 
     # - name: Check if connection running
     #   run: curl http://localhost:1001/api/v1/scaffold/
@@ -34,7 +37,7 @@ jobs:
       with:
         collection: test/Scaffold.postman_collection.json
         delayRequest: 1000
-        envVar: '[{ "key": "scaffoldUrl", "value": "http://127.0.0.1:1001/api/v1/scaffold" }]'
+        envVar: '[{ "key": "scaffoldUrl", "value": "http://scaffold:1001/api/v1/scaffold" }]'
 
     # - name: Newman
     #   uses: matt-ball/newman-action@master
