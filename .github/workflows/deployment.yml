@@ -25,7 +25,7 @@ jobs:
       run: docker compose ps
 
     - name: Sleep
-      run: sleep 10s
+      run: sleep 30s
 
     - name: Check docker process
       run: docker compose logs
