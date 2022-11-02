@@ -24,24 +24,11 @@ jobs:
     - name: Sleep
       run: sleep 10s
 
-    - name: Docker network check
-      run: docker network ls
+    - name: API Testing
+      run: docker compose -f "docker-compose-test.yml" up --build --abort-on-container-exit
 
-    - name: Inspect docker network
-      run: docker inspect ms-scaffold_default
-    # - name: Check if connection running
-    #   run: curl http://localhost:1001/api/v1/scaffold/
-
-    # - name: API Testing
-    #   run: docker compose -f "docker-compose.yml" up --build -d scaffold_test
-
-    - uses: matt-ball/newman-action@master
-      with:
-        collection: test/Scaffold.postman_collection.json
-        delayRequest: 1000
-        envVar: '[{ "key": "scaffoldUrl", "value": "http://scaffold:1001/api/v1/scaffold" }]'
-
-    # - name: Newman
-    #   uses: matt-ball/newman-action@master
+    # - uses: matt-ball/newman-action@master
     #   with:
     #     collection: test/Scaffold.postman_collection.json
+    #     delayRequest: 1000
+    #     envVar: '[{ "key": "scaffoldUrl", "value": "http://scaffold:1001/api/v1/scaffold" }]'
