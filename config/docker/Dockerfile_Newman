@@ -1,3 +1,3 @@
 FROM postman/newman
 ADD . /newman
-ENTRYPOINT newman run /newman/test/Scaffold.postman_collection.json --bail --timeout-request 1800000 --timeout-script 1800000 -k
+# ENTRYPOINT newman run /newman/test/Scaffold.postman_collection.json
