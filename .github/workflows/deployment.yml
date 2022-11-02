@@ -25,7 +25,7 @@ jobs:
       run: sleep 10s
 
     - name: Docker network check
-      run: docker network ps
+      run: docker network ls
 
     # - name: Check if connection running
     #   run: curl http://localhost:1001/api/v1/scaffold/
