@@ -12,7 +12,7 @@ services:
       - .:/${SERVICE_NAME}
     ports:
       - ${SCAFFOLD_PORT}:8080
-    env_file: env
+    env_file: .env
     links:
       - "scaffold_db:db"
     depends_on:
@@ -28,6 +28,6 @@ services:
       start_period: 30s
     image: postgres
     restart: always
-    env_file: env
+    env_file: .env
     ports:
       - ${SCAFFOLD_DB_PORT}:5432
