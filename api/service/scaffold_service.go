@@ -50,7 +50,7 @@ func (service *scaffoldService) Update(request web.ScaffoldUpdateRequest) (domai
 	if err != nil {
 		return scaffold, err
 	}
-	scaffold.User_id = res.User_id
+	scaffold.UserID = res.UserID
 
 	return service.scaffoldRepository.Update(scaffold), nil
 }
