@@ -11,7 +11,7 @@ services:
     build:
       context: .
       dockerfile: ./config/docker/Dockerfile_Newman
-    env_file: env
+    env_file: .env
     tty: true
     # depends_on:
     #   scaffold_db:
