@@ -33,7 +33,8 @@ jobs:
     # - name: API Testing
     #   run: docker compose -f "docker-compose-test.yml" up --build --abort-on-container-exit
 
-    - uses: matt-ball/newman-action@master
+    - name: API Testing
+      uses: matt-ball/newman-action@master
       with:
         collection: test/Scaffold.postman_collection.json
         delayRequest: 1000
