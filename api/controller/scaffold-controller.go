@@ -38,12 +38,7 @@ func NewScaffoldController(scaffoldService service.ScaffoldService /*, jwtServic
 func (controller *scaffoldController) All(context *gin.Context) {
 	controller.logger.SetUp(scaffoldLog)
 	scaffold := controller.scaffoldService.All()
-	webResponse := web.WebResponse{
-		Code:   http.StatusOK,
-		Status: "Success",
-		Errors: "",
-		Data:   scaffold,
-	}
+	webResponse := web.SuccessResponse(scaffold)
 	context.JSON(http.StatusOK, webResponse)
 	// token := context.GetHeader("Authorization")
 	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
@@ -65,12 +60,7 @@ func (controller *scaffoldController) FindById(context *gin.Context) {
 		notFoundError.Logf(err)
 		return
 	}
-	webResponse := web.WebResponse{
-		Code:   http.StatusOK,
-		Status: "Success",
-		Errors: "",
-		Data:   scaffold,
-	}
+	webResponse := web.SuccessResponse(scaffold)
 	context.JSON(http.StatusOK, webResponse)
 	// token := context.GetHeader("Authorization")
 	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
@@ -96,12 +86,7 @@ func (controller *scaffoldController) Create(context *gin.Context) {
 		return
 	}
 
-	webResponse := web.WebResponse{
-		Code:   http.StatusCreated,
-		Status: "Success",
-		Errors: "",
-		Data:   scaffold,
-	}
+	webResponse := web.SuccessResponse(scaffold)
 	context.JSON(http.StatusCreated, webResponse)
 	// token := context.GetHeader("Authorization")
 	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
@@ -133,12 +118,7 @@ func (controller *scaffoldController) Update(context *gin.Context) {
 		notFoundError.Logf(err)
 		return
 	}
-	webResponse := web.WebResponse{
-		Code:   http.StatusOK,
-		Status: "Success",
-		Errors: "",
-		Data:   scaffold,
-	}
+	webResponse := web.SuccessResponse(scaffold)
 	context.JSON(http.StatusOK, webResponse)
 	// token := context.GetHeader("Authorization")
 	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
@@ -161,12 +141,7 @@ func (controller *scaffoldController) Delete(context *gin.Context) {
 		notFoundError.Logf(err)
 		return
 	}
-	webResponse := web.WebResponse{
-		Code:   http.StatusOK,
-		Status: "Success",
-		Errors: "",
-		Data:   "Scaffold has been removed",
-	}
+	webResponse := web.SuccessResponse(nil)
 	context.JSON(http.StatusOK, webResponse)
 	// token := context.GetHeader("Authorization")
 	// userId, _ := controller.jwtService.GetUserData(token, "user_id")

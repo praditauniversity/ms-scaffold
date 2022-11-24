@@ -26,25 +26,15 @@ func (m *authorizeJWTMiddleware) AuthorizeJWT() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		authHeader := c.GetHeader("Authorization")
 		if authHeader == "" {
-			webResponse := web.WebResponse{
-				Code:   http.StatusUnauthorized,
-				Status: "UNAUTHORIZED",
-				Errors: "Not token found",
-				Data:   nil,
-			}
-			c.JSON(http.StatusUnauthorized, webResponse)
+			errorResponse := web.ErrorResponse(http.StatusUnauthorized, "UNAUTHORIZED", "No token provided")
+			c.JSON(http.StatusUnauthorized, errorResponse)
 			c.Abort()
 			return
 		}
 		_, err := m.jwtService.ValidateToken(authHeader)
 		if err != nil {
-			webResponse := web.WebResponse{
-				Code:   http.StatusUnauthorized,
-				Status: "UNAUTHORIZED",
-				Errors: "Token is invalid",
-				Data:   nil,
-			}
-			c.JSON(http.StatusUnauthorized, webResponse)
+			errorResponse := web.ErrorResponse(http.StatusUnauthorized, "UNAUTHORIZED", "Invalid token")
+			c.JSON(http.StatusUnauthorized, errorResponse)
 			c.Abort()
 			return
 		}

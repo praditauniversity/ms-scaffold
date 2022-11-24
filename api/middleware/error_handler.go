@@ -58,42 +58,22 @@ func ErrorHandler() gin.HandlerFunc {
 
 func validationErrors(c *gin.Context, err *gin.Error) {
 	splittedError := strings.Split(err.Error(), "\n")
-	errors := ValidationError{}.Error(splittedError)
-	webResponse := web.WebResponse{
-		Code:   http.StatusBadRequest,
-		Status: "BAD REQUEST",
-		Errors: errors,
-		Data:   nil,
-	}
-	c.JSON(http.StatusBadRequest, webResponse)
+	ValidationError{}.Error(splittedError)
+	errorResponse := web.ErrorResponse(http.StatusBadRequest, "VALIDATION_ERROR", ValidationError{}.Error(splittedError))
+	c.JSON(http.StatusBadRequest, errorResponse)
 }
 
 func authenticationError(c *gin.Context, err *gin.Error) {
-	webResponse := web.WebResponse{
-		Code:   http.StatusUnauthorized,
-		Status: "UNAUTHORIZED",
-		Errors: err,
-		Data:   nil,
-	}
-	c.JSON(http.StatusUnauthorized, webResponse)
+	errorResponse := web.ErrorResponse(http.StatusUnauthorized, "UNAUTHORIZED", err)
+	c.JSON(http.StatusUnauthorized, errorResponse)
 }
 
 func notFoundError(c *gin.Context, err *gin.Error) {
-	webResponse := web.WebResponse{
-		Code:   http.StatusNotFound,
-		Status: "Not Found",
-		Errors: err,
-		Data:   nil,
-	}
+	webResponse := web.ErrorResponse(http.StatusNotFound, "NOT_FOUND", err)
 	c.JSON(http.StatusNotFound, webResponse)
 }
 
 func internalServerError(c *gin.Context, err *gin.Error) {
-	webResponse := web.WebResponse{
-		Code:   http.StatusInternalServerError,
-		Status: "INTERNAL SERVER ERROR",
-		Errors: err,
-		Data:   nil,
-	}
-	c.JSON(http.StatusInternalServerError, webResponse)
+	errorResponse := web.ErrorResponse(http.StatusInternalServerError, "INTERNAL_SERVER_ERROR", err)
+	c.JSON(http.StatusInternalServerError, errorResponse)
 }
