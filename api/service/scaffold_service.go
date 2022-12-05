@@ -9,7 +9,7 @@ import (
 )
 
 type ScaffoldService interface {
-	All() []domain.Scaffold
+	All(scaffold *domain.Scaffold, pagination *domain.Pagination) (*[]domain.Scaffold, error)
 	Create(request web.ScaffoldRequest) (domain.Scaffold, error)
 	FindById(id uint) (domain.Scaffold, error)
 	Update(request web.ScaffoldUpdateRequest) (domain.Scaffold, error)
@@ -24,8 +24,8 @@ func NewScaffoldService(scaffoldRepo repository.ScaffoldRepository) ScaffoldServ
 	return &scaffoldService{scaffoldRepository: scaffoldRepo}
 }
 
-func (service *scaffoldService) All() []domain.Scaffold {
-	return service.scaffoldRepository.All()
+func (service *scaffoldService) All(scaffold *domain.Scaffold, pagination *domain.Pagination) (*[]domain.Scaffold, error) {
+	return service.scaffoldRepository.All(scaffold, pagination)
 }
 
 func (service *scaffoldService) Create(request web.ScaffoldRequest) (domain.Scaffold, error) {

@@ -3,8 +3,10 @@ package controller
 import (
 	"ms-scaffold/api/exception"
 	"ms-scaffold/api/helper"
+	"ms-scaffold/api/models/domain"
 	"ms-scaffold/api/models/web"
 	"ms-scaffold/api/service"
+	"ms-scaffold/api/utils"
 	"net/http"
 	"strconv"
 
@@ -36,9 +38,17 @@ func NewScaffoldController(scaffoldService service.ScaffoldService /*, jwtServic
 }
 
 func (controller *scaffoldController) All(context *gin.Context) {
-	controller.logger.SetUp(scaffoldLog)
-	scaffold := controller.scaffoldService.All()
-	webResponse := web.SuccessResponse(scaffold)
+	pagination := utils.GeneratePaginationFromRequest(context)
+	var scaffolds domain.Scaffold
+	validationError := exception.NewValidationError(context, controller.logger)
+	scaffoldLists, err := controller.scaffoldService.All(&scaffolds, &pagination)
+
+	ok := validationError.SetMeta(err)
+	if ok {
+		validationError.Logf(err)
+		return
+	}
+	webResponse := web.SuccessResponse(scaffoldLists)
 	context.JSON(http.StatusOK, webResponse)
 	// token := context.GetHeader("Authorization")
 	// userId, _ := controller.jwtService.GetUserData(token, "user_id")

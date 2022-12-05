@@ -8,7 +8,7 @@ import (
 )
 
 type ScaffoldRepository interface {
-	All() []domain.Scaffold
+	All(scaffold *domain.Scaffold, pagination *domain.Pagination) (*[]domain.Scaffold, error)
 	Create(scaffold domain.Scaffold) domain.Scaffold
 	Update(scaffold domain.Scaffold) domain.Scaffold
 	Delete(scaffold domain.Scaffold)
@@ -23,10 +23,16 @@ func NewScaffoldRepository(db *gorm.DB) ScaffoldRepository {
 	return &ScaffoldConnectDB{dbConnect: db} //connect database to interface
 }
 
-func (conn *ScaffoldConnectDB) All() []domain.Scaffold {
-	var scaffold []domain.Scaffold
-	conn.dbConnect.Find(&scaffold)
-	return scaffold
+func (conn *ScaffoldConnectDB) All(scaffold *domain.Scaffold, pagination *domain.Pagination) (*[]domain.Scaffold, error) {
+	var scaffolds []domain.Scaffold
+	offset := (pagination.Page - 1) * pagination.Limit
+	queryBuilder := conn.dbConnect.Limit(pagination.Limit).Offset(offset).Order(pagination.Sort)
+	result := queryBuilder.Model(&domain.Scaffold{}).Where(scaffold).Find(&scaffolds)
+	if result.Error != nil {
+		msg := result.Error
+		return nil, msg
+	}
+	return &scaffolds, nil
 }
 
 func (conn *ScaffoldConnectDB) Create(scaffold domain.Scaffold) domain.Scaffold {
