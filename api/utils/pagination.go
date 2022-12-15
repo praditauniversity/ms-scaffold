@@ -2,16 +2,22 @@ package utils
 
 import (
 	models "ms-scaffold/api/models/domain"
+	config "ms-scaffold/config/db"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
-// GeneratePaginationFromRequest ..
-func GeneratePaginationFromRequest(c *gin.Context) models.Pagination {
+var (
+	db *gorm.DB = config.NewDB()
+)
+
+func GeneratePaginationForScaffold(c *gin.Context, m models.Scaffold) models.Pagination {
 	// Initializing default
-	//	var mode string
-	limit := 10
+	var total int64
+	db.Model(&m).Count(&total)
+	limit := int(total)
 	page := 1
 	sort := "created_at asc"
 	query := c.Request.URL.Query()

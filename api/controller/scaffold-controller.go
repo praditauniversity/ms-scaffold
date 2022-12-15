@@ -38,8 +38,8 @@ func NewScaffoldController(scaffoldService service.ScaffoldService /*, jwtServic
 }
 
 func (controller *scaffoldController) All(context *gin.Context) {
-	pagination := utils.GeneratePaginationFromRequest(context)
 	var scaffolds domain.Scaffold
+	pagination := utils.GeneratePaginationForScaffold(context, scaffolds)
 	validationError := exception.NewValidationError(context, controller.logger)
 	scaffoldLists, err := controller.scaffoldService.All(&scaffolds, &pagination)
 
