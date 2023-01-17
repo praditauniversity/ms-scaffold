@@ -30,5 +30,10 @@ services:
     image: postgres
     restart: always
     env_file: .env
+    volumes:
+      - scaffold_db_data:/var/lib/postgresql/data
     ports:
       - ${SCAFFOLD_DB_PORT}:5432
+
+volumes:
+  scaffold_db_data:

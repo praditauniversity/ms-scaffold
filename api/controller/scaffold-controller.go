@@ -25,7 +25,7 @@ type ScaffoldController interface {
 
 type scaffoldController struct {
 	scaffoldService service.ScaffoldService
-	jwtService      service.JWTService
+	// jwtService      service.JWTService
 	logger          helper.Log
 }
 
@@ -100,6 +100,8 @@ func (controller *scaffoldController) Create(context *gin.Context) {
 	context.JSON(http.StatusCreated, webResponse)
 	// token := context.GetHeader("Authorization")
 	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
+	// userId, err := uuid.Parse(userIdString)
+	// request.UserID = userId
 	// controller.logger.Infof("%d already insert a scaffold with id %d", userId, scaffold.ID)
 }
 
@@ -131,7 +133,8 @@ func (controller *scaffoldController) Update(context *gin.Context) {
 	webResponse := web.SuccessResponse(scaffold)
 	context.JSON(http.StatusOK, webResponse)
 	// token := context.GetHeader("Authorization")
-	// userId, _ := controller.jwtService.GetUserData(token, "user_id")
+	// username, _ := controller.jwtService.GetUserData(token, "username")
+	// request.UpdatedBy = username
 	// controller.logger.Infof("%s already updated a scaffold with id %d", userId, scaffold.ID)
 }
 
