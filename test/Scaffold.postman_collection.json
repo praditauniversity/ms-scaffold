@@ -48,7 +48,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1\n}",
+									"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": \"c343c0ac-49f9-436a-a0c1-ad598f3b0b6f\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -70,7 +70,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}",
+											"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": \"c343c0ac-49f9-436a-a0c1-ad598f3b0b6f\",\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -94,7 +94,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
+									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": \"c343c0ac-49f9-436a-a0c1-ad598f3b0b6f\",\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
 								}
 							]
 						},
@@ -159,7 +159,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
+									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": \"c343c0ac-49f9-436a-a0c1-ad598f3b0b6f\",\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
 								}
 							]
 						}
@@ -234,7 +234,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
+									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": \"c343c0ac-49f9-436a-a0c1-ad598f3b0b6f\",\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
 								}
 							]
 						},
@@ -274,7 +274,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Create\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"updated_by\": \"arci\"\n}",
+									"raw": "{\n  \"name\": \"Create\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": \"c343c0ac-49f9-436a-a0c1-ad598f3b0b6f\",\n  \"updated_by\": \"arci\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -300,7 +300,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000\n}",
+											"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": \"c343c0ac-49f9-436a-a0c1-ad598f3b0b6f\",\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -392,7 +392,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}",
+											"raw": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": \"c343c0ac-49f9-436a-a0c1-ad598f3b0b6f\",\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -419,7 +419,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": 1,\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
+									"body": "{\n  \"name\": \"Create anomaly\",\n  \"description\": \"Material is needed to create an anomaly.\",\n  \"user_id\": \"c343c0ac-49f9-436a-a0c1-ad598f3b0b6f\",\n  \"ID\": 1,\n  \"parent_id\": 1,\n  \"start_time\": \"2022-10-20T04:04:48.377Z\",\n  \"end_time\": \"2022-10-20T04:04:48.377Z\",\n  \"weight_percentage\": 50,\n  \"progress_percentage\": 50,\n  \"priority\": \"high\",\n  \"cost_plan\": 100000,\n  \"cost_actual\": 100000,\n  \"material_cost_plan\": 100000,\n  \"material_cost_actual\": 100000,\n  \"tool_cost_plan\": 100000,\n  \"tool_cost_actual\": 100000,\n  \"human_cost_plan\": 100000,\n  \"human_cost_actual\": 100000,\n  \"created_by\": \"John Dee\",\n  \"updated_by\": \"John Dee\",\n  \"deleted_by\": \"John Dee\",\n  \"CreatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"UpdatedAt\": \"1999-12-01T00:00:00.000Z\",\n  \"DeletedAt\": \"1999-12-01T00:00:00.000Z\"\n}"
 								}
 							]
 						}
